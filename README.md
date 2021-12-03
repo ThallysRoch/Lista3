@@ -1,27 +1,27 @@
 1 - Escreva um script que use o comando tr para substituir todos os números em um arquivo por caracteres ‘X’.
 
   > 1.sh
-  chmod +x 1.sh
-  vim 1.sh
-  
-  #!/bin/bash
-  
-  a=$1
-  
-  cat ${a} | tr '0123456789' 'X'
+    chmod +x 1.sh
+    vim 1.sh
+
+    #!/bin/bash
+
+    a=$1
+
+    cat ${a} | tr '0123456789' 'X'
   
   
 2 - Escreva um script que use o comando tr para remover linhas vazias de um arquivo, isto é, linhas que possuem apenas o enter (\n).
   
   > 2.sh
-  chmod +x 2.sh
-  vim 2.sh
-  
-  #!/bin/bash
-  
-  a=$1
-  
-  cat ${a} | tr -s '\n'
+    chmod +x 2.sh
+    vim 2.sh
+
+    #!/bin/bash
+
+    a=$1
+
+    cat ${a} | tr -s '\n'
     
 
 3 - Escreva um script que leia um endereço IP, separe os 4 octetos, e imprima-os em formato binário. Ex.:
@@ -34,27 +34,27 @@ Octeto #3: 4 em binário 00000100
 Octeto #4: 4 em binário 00000100
 
   > 3.sh
-  chmod +x 3.sh
-  vim 3.sh
-  
-  #!/bin/bash
-    
-  read -p "Digite um endereço IP: " a
-  
-  num1=$(echo ${a} | cut -d '.' -f 1)
-  num2=$(echo ${a} | cut -d '.' -f 2)
-  num3=$(echo ${a} | cut -d '.' -f 3)
-  num4=$(echo ${a} | cut -d '.' -f 4)
-  
-  b=$(bc <<< "obase=2;${num1}")
-  c=$(bc <<< "obase=2;${num2}")
-  d=$(bc <<< "obase=2;${num3}")
-  e=$(bc <<< "obase=2;${num4}")
-  
-  echo "Octeto #1: ${num1} em binário: ${b}"
-  echo "Octeto #2: ${num2} em binário: ${c}"
-  echo "Octeto #3: ${num3} em binário: ${d}"
-  echo "Octeto #4: ${num4} em binário: ${e}"
+    chmod +x 3.sh
+    vim 3.sh
+
+    #!/bin/bash
+
+    read -p "Digite um endereço IP: " a
+
+    num1=$(echo ${a} | cut -d '.' -f 1)
+    num2=$(echo ${a} | cut -d '.' -f 2)
+    num3=$(echo ${a} | cut -d '.' -f 3)
+    num4=$(echo ${a} | cut -d '.' -f 4)
+
+    b=$(bc <<< "obase=2;${num1}")
+    c=$(bc <<< "obase=2;${num2}")
+    d=$(bc <<< "obase=2;${num3}")
+    e=$(bc <<< "obase=2;${num4}")
+
+    echo "Octeto #1: ${num1} em binário: ${b}"
+    echo "Octeto #2: ${num2} em binário: ${c}"
+    echo "Octeto #3: ${num3} em binário: ${d}"
+    echo "Octeto #4: ${num4} em binário: ${e}"
 
 
 
