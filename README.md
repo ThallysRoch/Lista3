@@ -1,14 +1,14 @@
 1 - Escreva um script que use o comando tr para substituir todos os números em um arquivo por caracteres ‘X’.
 
-  > 1.sh
-    chmod +x 1.sh
-    vim 1.sh
+    > 1.sh
+      chmod +x 1.sh
+      vim 1.sh
 
-    #!/bin/bash
+      #!/bin/bash
 
-    a=$1
+      a=$1
 
-    cat ${a} | tr '0123456789' 'X'
+      cat ${a} | tr '0123456789' 'X'
   
   
 2 - Escreva um script que use o comando tr para remover linhas vazias de um arquivo, isto é, linhas que possuem apenas o enter (\n).
