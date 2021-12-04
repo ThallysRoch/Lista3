@@ -69,6 +69,27 @@ c - Liste apenas os links simbólicos
 
 Exemplo: lista.sh -a # lista apenas os diretórios
 
+      > 4.sh
+        chmod +x 4.sh
+        vim 4.sh
+
+        #!/bin/bash
+        
+        echo -e "Uma vez flamengo, sempre flamengo"
+        
+        dire=$(echo $(ls -a | grep "^d"))
+        files=$(echo $(ls -l | grep "^-..x"))
+        lnks=$(echo $(ls -a | grep "^l"))
+        
+        opc=$1
+        
+        case $opc in
+            "a") echo $dire ;;
+            "b") echo $files ;;
+            "c") echo $links ;;
+            *) echo "Opção inválida" ;;
+        esac
+
 5 - Escreva um script que valide as seguintes regras para criação de uma senha: pelo menos 6 caracteres, uma letra maiúscula e um número. Validar significa receber uma senha e dizer se esta obedece ao padrão ou não (se possível a senha não deve ser exibida enquanto o usuário digita).
 
 
