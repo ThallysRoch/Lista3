@@ -93,4 +93,23 @@ Exemplo: lista.sh -a # lista apenas os diretórios
 5 - Escreva um script que valide as seguintes regras para criação de uma senha: pelo menos 6 caracteres, uma letra maiúscula e um número. Validar significa receber uma senha e dizer se esta obedece ao padrão ou não (se possível a senha não deve ser exibida enquanto o usuário digita).
 
 
+    > 5.sh
+      chmod +x 5.sh
+      vim 5.sh
 
+      #!/bin/bash
+        
+      $(stty -echo)
+      
+      read -p "Digite uma senha com no mínimo 1 letra maiúscula e 1 número, com o tamanho mínimo de 6 dígitos: " a
+      
+      $(stty echo)
+      
+      echo $a | egrep '[[:alnum:]]{6,}' | egrep '[A-Z]' | egrep '[0-9]' &> /dev/null
+      
+      if [ $? -ne 0 ]: then
+        echo "Senha fora do padrão. A senha deve conter no mínimo 1 letra maiúscula e 1 número, com o tamanho mínimo de 6 dígitos, tente novamente!"
+        exit 1
+      fi
+      
+      echo "Senha cadastrada com sucesso!"
